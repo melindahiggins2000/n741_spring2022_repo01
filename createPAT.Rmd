@@ -181,4 +181,4 @@ After clicking "PUSH" another window will open to show you the result of this co
 knitr::include_graphics("push2.png")
 ```
 
-**CONGRATULATIONS!! You are now connected and authenticated to synch up your RStudio project to a repository in Github using Git version control and tracking!!**
+**CONGRATULATIONS!! You are now connected and authenticated to sync up your RStudio project to a repository in Github using Git version control and tracking!!**

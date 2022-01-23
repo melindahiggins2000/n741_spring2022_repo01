@@ -1,5 +1,5 @@
 ---
-title: "Creating a PAT for Githib"
+title: "Creating a PAT for Github"
 author: "Melinda Higgins"
 date: "1/23/2022"
 output: rmdformats::downcute
@@ -12,7 +12,7 @@ knitr::opts_chunk$set(message = FALSE)
 knitr::opts_chunk$set(error = TRUE)
 ```
 
-## What is a PAT and why do I need one?
+# What is a PAT and why do I need one?
 
 At this point in your overall life and as a college student, you have probably encountered various times when you need to provide some additional "authorization" besides your email to get logged into an account or website. This is known as 2FA (2-factor authentication).
 
@@ -23,7 +23,7 @@ Learn more at
 -   [Github Docs](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
 -   [Ch9 - Happy Git and Github for the UseR by Jenny Bryan](https://happygitwithr.com/https-pat.html).
 
-## STEP 1: Open RStudio, Install `usethis` package
+# STEP 1: Open RStudio, Install `usethis` package
 
 To get started, first install the `usethis` package. To add additional functionality to R, you will need to install "packages" which mostly provide a collection of functions you can use after you
 
@@ -32,51 +32,119 @@ To get started, first install the `usethis` package. To add additional functiona
 
 Open RStudio, go to "Tools", "Install Packages" and type in "usethis", click install. Watch your "Console" window (lower left panel) to check for any errors and a message stating that your package was downloaded to your computer.
 
-![](tools_install.png)
+```{r, echo=FALSE, out.width="50%"}
+knitr::include_graphics("tools_install.png")
+```
 
-![](install_usethis.png)
+```{r, echo=FALSE, out.width="50%"}
+knitr::include_graphics("install_usethis.png")
+```
 
 The best way to double check that the package was correctly installed is to click on the "Packages" TAB (lower right panel) and see if "usethis" is in your package list.
 
-![](usethis_packagelist.png)
+```{r, echo=FALSE, out.width="80%"}
+knitr::include_graphics("usethis_packagelist.png")
+```
 
-## STEP 2: Attach usethis package to your R Session
+# STEP 2: Attach usethis package to your R Session
 
 Go to your "Console" window (lower left panel) and attach the `usethis` package using the `library()` function.
 
-![](attach_usethis.png)
+```{r, echo=FALSE, out.width="80%"}
+knitr::include_graphics("attach_usethis.png")
+```
 
-## STEP 3: Create your PAT and Store It
+# STEP 3: Create your PAT and Store It
 
 These next two steps are explained in Jenny Bryan's "Happy Git and Github for the UseR" online book [Ch9 - Happy Git and Github for the UseR by Jenny Bryan](https://happygitwithr.com/https-pat.html).
 
-### Generate your PAT
+## Generate your PAT
 
 In the "Console" window, type the following:
 
 `usethis::create_github_token()`
 
-This will open your browser and take you to Github. Be sure to log into your Github account if you aren't already.
+```{r, echo=FALSE, out.width="80%"}
+knitr::include_graphics("createPAT_console.png")
+```
+
+This will open your browser and take you to Github. Log into your Github account.
+
+```{r, echo=FALSE, out.width="50%"}
+knitr::include_graphics("createPAT_githublogin.PNG")
+```
 
 Type in a description for your PAT (why do you want one) and choose an expiration date. It is ok to choose unlimited but you will get a warning. Keep the default settings. Scroll to the bottom and click "Generate".
 
+```{r, echo=FALSE, out.width="100%"}
+knitr::include_graphics("createPAT_githubdescribe.png")
+```
 
+```{r, echo=FALSE, out.width="100%"}
+knitr::include_graphics("createPAT_githubdescribe2.png")
+```
 
+```{r, echo=FALSE, out.width="100%"}
+knitr::include_graphics("createPAT_githubdescribe3._expirewarn.png")
+```
 
-This will take you to your PATs page for your Github account. Be sure to click the "copy to clipboard" button to copy your PAT to yoru clipboard.
+```{r, echo=FALSE, out.width="80%"}
+knitr::include_graphics("createPAT_githubdescribe4._generate.png")
+```
 
-I personnaly then paste this into a text editor like notepad to save it on my computer. But keep it in the clipboard for a moment - because you will paste it in the next step.
+This will take you to your PATs page for your Github account. Be sure to click the "copy to clipboard" button to copy your PAT to your clipboard.
+
+```{r, echo=FALSE, out.width="80%"}
+knitr::include_graphics("createPAT_github5._savetoken.png")
+```
+
+I personally then paste this into a text editor like notepad to save it on my computer. But keep it in the clipboard for a moment - because you will paste it in the next step.
 
 Go back to your RStudio Console and type the following:
 
+`gitcreds::gitcreds_set()`
 
+And NOW "PASTE" (control-V or command-V) your PAT here and click return.
 
-## STEP 4: Try a push to Github
+```{r, echo=FALSE, out.width="80%"}
+knitr::include_graphics("savePAT_gitcreds.png")
+```
+
+You should see the following in your Console:
+
+```{r, echo=FALSE, out.width="50%"}
+knitr::include_graphics("savePAT_gitcreds2.png")
+```
+
+That's it - your PAT should now be saved and ready to use.
+
+# STEP 4: Try a push to Github
 
 Now go back to your RStudio project, make a change to your project folder. For example, make a few simple edits to your "README.md" file, "stage", "commit" and then "push" your changes to Github and check that you are NOT asked to type in your password again.
 
+## Stage a file that has been changed or added
 
+```{r, echo=FALSE, out.width="80%"}
+knitr::include_graphics("stage.png")
+```
 
+## Commit this change
 
+```{r, echo=FALSE, out.width="80%"}
+knitr::include_graphics("commit.png")
+```
 
+```{r, echo=FALSE, out.width="80%"}
+knitr::include_graphics("commit2.png")
+```
+
+## Push these changes back up to your Github repo
+
+```{r, echo=FALSE, out.width="80%"}
+knitr::include_graphics("push.png")
+```
+
+```{r, echo=FALSE, out.width="80%"}
+knitr::include_graphics("push2.png")
+```
 

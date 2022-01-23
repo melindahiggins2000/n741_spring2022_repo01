@@ -46,7 +46,7 @@ The best way to double check that the package was correctly installed is to clic
 knitr::include_graphics("usethis_packagelist.png")
 ```
 
-# STEP 2: Attach usethis package to your R Session
+# STEP 2: Attach `usethis` package to your R Session
 
 Go to your "Console" window (lower left panel) and attach the `usethis` package using the `library()` function.
 

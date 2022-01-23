@@ -120,6 +120,19 @@ knitr::include_graphics("savePAT_gitcreds2.png")
 
 That's it - your PAT should now be saved and ready to use.
 
+## OPTIONAL - Another way to check your PAT
+
+Another OPTIONAL way to check that your PAT is working correctly, is to use a function in the `ghclass` package. 
+
+* You will need to install the `ghclass` package using RStudio/Tools/Install Packages menu option like above.
+* Then attach the package by typing `library(ghclass)`.
+* Then run this command ` ghclass::github_test_token()`
+* If all works well you will see that `Your GitHub PAT authenticated correctly`.
+
+```{r, echo=FALSE, out.width="80%"}
+knitr::include_graphics("ghclass_checkPAT.png")
+```
+
 # STEP 4: Try a push to Github
 
 Now go back to your RStudio project, make a change to your project folder. For example, make a few simple edits to your "README.md" file, "stage", "commit" and then "push" your changes to Github and check that you are NOT asked to type in your password again.
@@ -168,4 +181,4 @@ After clicking "PUSH" another window will open to show you the result of this co
 knitr::include_graphics("push2.png")
 ```
 
-**CONGRATULATIONS!! You are now connected and authenticated to sych up your RStudio project to a repository in Github using Git version control and tracking!!**
+**CONGRATULATIONS!! You are now connected and authenticated to synch up your RStudio project to a repository in Github using Git version control and tracking!!**
